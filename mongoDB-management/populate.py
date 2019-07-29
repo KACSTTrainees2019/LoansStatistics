@@ -9,7 +9,7 @@ def populate_data(collection_name="data"):
     with MongoClient() as client:
         # Populate data into database
         collection = client["loans_data_base"][collection_name]
-        collection.insert(data)
+        collection.insert_many(data)
 
 
 def csv_to_data(csv_file_path="data.csv"):
